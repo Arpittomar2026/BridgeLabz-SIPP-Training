@@ -1,0 +1,46 @@
+CLASS Pet
+    ATTRIBUTES: name, age
+    CONSTRUCTOR(name, age)
+        SET this.name = name
+        SET this.age = age
+    METHOD showInfo()
+        PRINT name and age
+
+CLASS Dog EXTENDS Pet
+    ATTRIBUTE: breed
+    CONSTRUCTOR(name, age, breed)
+        CALL super(name, age)
+        SET this.breed = breed
+    METHOD bark()
+        PRINT "<name> is barking"
+
+CLASS Cat EXTENDS Pet
+    ATTRIBUTE: color
+    CONSTRUCTOR(name, age, color)
+        CALL super(name, age)
+        SET this.color = color
+    METHOD meow()
+        PRINT "<name> is meowing"
+
+CLASS Bird EXTENDS Pet
+    ATTRIBUTE: canFly (boolean)
+    CONSTRUCTOR(name, age, canFly)
+        CALL super(name, age)
+        SET this.canFly = canFly
+    METHOD chirp()
+        PRINT "<name> is chirping"
+
+MAIN
+    CREATE Dog object d("Tommy", 3, "Bulldog")
+    CREATE Cat object c("Kitty", 2, "White")
+    CREATE Bird object b("Mithu", 1, true)
+
+    CALL d.showInfo()
+    CALL d.bark()
+
+    CALL c.showInfo()
+    CALL c.meow()
+
+    CALL b.showInfo()
+    CALL b.chirp()
+END
